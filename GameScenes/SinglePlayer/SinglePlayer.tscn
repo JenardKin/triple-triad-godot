@@ -1,0 +1,125 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://resized-MainMenu.jpeg" type="Texture" id=1]
+[ext_resource path="res://Globals/Audio/sound-invalid.ogg" type="AudioStream" id=2]
+[ext_resource path="res://GameScenes/SinglePlayer/Back.cs" type="Script" id=3]
+[ext_resource path="res://Globals/Audio/cursor_move.ogg" type="AudioStream" id=4]
+[ext_resource path="res://GameScenes/SinglePlayer/SinglePlayerPointer.cs" type="Script" id=5]
+[ext_resource path="res://Globals/Textures/iconfl01_15.png" type="Texture" id=6]
+[ext_resource path="res://GameScenes/SinglePlayer/Start.cs" type="Script" id=7]
+[ext_resource path="res://Globals/Audio/sound-back.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Globals/Audio/Accept.ogg" type="AudioStream" id=9]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 833, 0, 195, 117 )
+
+[node name="SinglePlayer" type="Node2D"]
+
+[node name="Background" type="CanvasLayer" parent="."]
+
+[node name="Background Image" type="TextureRect" parent="Background"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu"]
+margin_left = 277.0
+margin_top = 89.0
+margin_right = 595.0
+margin_bottom = 519.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Menu/MarginContainer"]
+margin_right = 318.0
+margin_bottom = 430.0
+color = Color( 0.415686, 0.403922, 0.427451, 1 )
+
+[node name="MenuEntries" type="VBoxContainer" parent="Menu"]
+margin_left = 276.0
+margin_top = 91.0
+margin_right = 593.0
+margin_bottom = 131.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Menu/MenuEntries"]
+margin_right = 317.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 394.641, 210.734 )
+text = "FINAL FANTASY VIII
+TRIPLE TRIAD"
+align = 1
+
+[node name="Rules" type="MarginContainer" parent="Menu/MenuEntries"]
+margin_top = 35.0
+margin_right = 317.0
+margin_bottom = 211.0
+
+[node name="SinglePlayerButtons" type="VBoxContainer" parent="Menu/MenuEntries/Rules"]
+margin_right = 317.0
+margin_bottom = 176.0
+
+[node name="Open" type="CheckButton" parent="Menu/MenuEntries/Rules/SinglePlayerButtons"]
+margin_right = 317.0
+margin_bottom = 40.0
+text = "Open"
+align = 1
+
+[node name="Random" type="CheckButton" parent="Menu/MenuEntries/Rules/SinglePlayerButtons"]
+margin_top = 44.0
+margin_right = 317.0
+margin_bottom = 84.0
+text = "Random"
+align = 1
+
+[node name="Sudden Death" type="CheckButton" parent="Menu/MenuEntries/Rules/SinglePlayerButtons"]
+margin_top = 88.0
+margin_right = 317.0
+margin_bottom = 128.0
+text = "Sudden Death"
+align = 1
+
+[node name="Back" type="MenuButton" parent="Menu/MenuEntries/Rules/SinglePlayerButtons"]
+margin_top = 132.0
+margin_right = 317.0
+margin_bottom = 152.0
+text = "BACK"
+script = ExtResource( 3 )
+
+[node name="Start" type="MenuButton" parent="Menu/MenuEntries/Rules/SinglePlayerButtons"]
+margin_top = 156.0
+margin_right = 317.0
+margin_bottom = 176.0
+text = "START"
+script = ExtResource( 7 )
+
+[node name="Pointer" type="Sprite" parent="Menu/MenuEntries/Rules/SinglePlayerButtons"]
+position = Vector2( 50, 18.073 )
+scale = Vector2( 0.163, 0.15 )
+texture = SubResource( 1 )
+script = ExtResource( 5 )
+
+[node name="Sounds" type="Node" parent="Menu/MenuEntries/Rules/SinglePlayerButtons/Pointer"]
+
+[node name="Move" type="AudioStreamPlayer2D" parent="Menu/MenuEntries/Rules/SinglePlayerButtons/Pointer/Sounds"]
+stream = ExtResource( 4 )
+
+[node name="Denied" type="AudioStreamPlayer2D" parent="Menu/MenuEntries/Rules/SinglePlayerButtons/Pointer/Sounds"]
+stream = ExtResource( 2 )
+
+[node name="Back" type="AudioStreamPlayer2D" parent="Menu/MenuEntries/Rules/SinglePlayerButtons/Pointer/Sounds"]
+stream = ExtResource( 8 )
+
+[node name="Confirm" type="AudioStreamPlayer2D" parent="Menu/MenuEntries/Rules/SinglePlayerButtons/Pointer/Sounds"]
+stream = ExtResource( 9 )
+autoplay = true

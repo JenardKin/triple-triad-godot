@@ -1,0 +1,1598 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://resized-TripleTriadBG.jpeg" type="Texture" id=1]
+[ext_resource path="res://Globals/Textures/cardstext_13-edit.png" type="Texture" id=2]
+[ext_resource path="res://GameScenes/Battle/Audio/sound-capture.ogg" type="AudioStream" id=3]
+[ext_resource path="res://GameObjects/Card/Textures/cards_0.png" type="Texture" id=4]
+[ext_resource path="res://GameObjects/Card/Attributes.cs" type="Script" id=5]
+[ext_resource path="res://GameObjects/Card/Card.cs" type="Script" id=6]
+[ext_resource path="res://GameScenes/Battle/Battle.cs" type="Script" id=7]
+[ext_resource path="res://GameScenes/Battle/Audio/Shuffle or Boogie.ogg" type="AudioStream" id=8]
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 256, 256 )
+
+[sub_resource type="Gradient" id=3]
+colors = PoolColorArray( 0.243137, 0.345098, 0.752941, 1, 0.917647, 0.909804, 1, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Gradient" id=5]
+colors = PoolColorArray( 0.752941, 0.243137, 0.290196, 1, 1, 0.909804, 0.929412, 1 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 6, 6, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 190, 100, 100 )
+
+[node name="Battle" type="Control"]
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Triple Triad Image" type="TextureRect" parent="Background"]
+margin_right = 874.0
+margin_bottom = 640.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Field" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 215.0
+margin_top = 1.0
+margin_right = 658.0
+margin_bottom = 639.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="A1" type="Control" parent="Field"]
+margin_right = 443.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="A2" type="Control" parent="Field"]
+margin_top = 71.0
+margin_right = 443.0
+margin_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="A3" type="Control" parent="Field"]
+margin_top = 142.0
+margin_right = 443.0
+margin_bottom = 209.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="B1" type="Control" parent="Field"]
+margin_top = 213.0
+margin_right = 443.0
+margin_bottom = 280.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="B2" type="Control" parent="Field"]
+margin_top = 284.0
+margin_right = 443.0
+margin_bottom = 351.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="B3" type="Control" parent="Field"]
+margin_top = 355.0
+margin_right = 443.0
+margin_bottom = 422.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="C1" type="Control" parent="Field"]
+margin_top = 426.0
+margin_right = 443.0
+margin_bottom = 493.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="C2" type="Control" parent="Field"]
+margin_top = 497.0
+margin_right = 443.0
+margin_bottom = 564.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="C3" type="Control" parent="Field"]
+margin_top = 568.0
+margin_right = 443.0
+margin_bottom = 635.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Player1Cards" type="VBoxContainer" parent="."]
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_right = 175.0
+margin_bottom = 500.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Container0" type="Control" parent="Player1Cards"]
+margin_right = 150.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Card" type="TextureButton" parent="Player1Cards/Container0"]
+margin_right = 148.0
+margin_bottom = 209.0
+texture_normal = SubResource( 2 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerGradient" type="TextureRect" parent="Player1Cards/Container0/Card"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyGradient" type="TextureRect" parent="Player1Cards/Container0/Card"]
+visible = false
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 6 )
+expand = true
+
+[node name="Attributes" type="GridContainer" parent="Player1Cards/Container0/Card"]
+margin_left = 12.0
+margin_top = 14.0
+margin_right = 75.0
+margin_bottom = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="Player1Cards/Container0/Card/Attributes"]
+margin_right = 18.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Top" type="TextureRect" parent="Player1Cards/Container0/Card/Attributes"]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container2" type="Container" parent="Player1Cards/Container0/Card/Attributes"]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Left" type="TextureRect" parent="Player1Cards/Container0/Card/Attributes"]
+margin_top = 20.0
+margin_right = 18.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container3" type="Container" parent="Player1Cards/Container0/Card/Attributes"]
+margin_left = 22.0
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Right" type="TextureRect" parent="Player1Cards/Container0/Card/Attributes"]
+margin_left = 44.0
+margin_top = 20.0
+margin_right = 62.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container4" type="Container" parent="Player1Cards/Container0/Card/Attributes"]
+margin_top = 40.0
+margin_right = 18.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Down" type="TextureRect" parent="Player1Cards/Container0/Card/Attributes"]
+margin_left = 22.0
+margin_top = 40.0
+margin_right = 40.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container5" type="Container" parent="Player1Cards/Container0/Card/Attributes"]
+margin_left = 44.0
+margin_top = 40.0
+margin_right = 62.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AudioCapture" type="AudioStreamPlayer2D" parent="Player1Cards/Container0/Card"]
+stream = ExtResource( 3 )
+
+[node name="Container1" type="Control" parent="Player1Cards"]
+margin_top = 100.0
+margin_right = 150.0
+margin_bottom = 197.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Card" type="TextureButton" parent="Player1Cards/Container1"]
+margin_right = 148.0
+margin_bottom = 209.0
+texture_normal = SubResource( 2 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerGradient" type="TextureRect" parent="Player1Cards/Container1/Card"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyGradient" type="TextureRect" parent="Player1Cards/Container1/Card"]
+visible = false
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 6 )
+expand = true
+
+[node name="Attributes" type="GridContainer" parent="Player1Cards/Container1/Card"]
+margin_left = 12.0
+margin_top = 14.0
+margin_right = 75.0
+margin_bottom = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="Player1Cards/Container1/Card/Attributes"]
+margin_right = 18.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Top" type="TextureRect" parent="Player1Cards/Container1/Card/Attributes"]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container2" type="Container" parent="Player1Cards/Container1/Card/Attributes"]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Left" type="TextureRect" parent="Player1Cards/Container1/Card/Attributes"]
+margin_top = 20.0
+margin_right = 18.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container3" type="Container" parent="Player1Cards/Container1/Card/Attributes"]
+margin_left = 22.0
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Right" type="TextureRect" parent="Player1Cards/Container1/Card/Attributes"]
+margin_left = 44.0
+margin_top = 20.0
+margin_right = 62.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container4" type="Container" parent="Player1Cards/Container1/Card/Attributes"]
+margin_top = 40.0
+margin_right = 18.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Down" type="TextureRect" parent="Player1Cards/Container1/Card/Attributes"]
+margin_left = 22.0
+margin_top = 40.0
+margin_right = 40.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container5" type="Container" parent="Player1Cards/Container1/Card/Attributes"]
+margin_left = 44.0
+margin_top = 40.0
+margin_right = 62.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AudioCapture" type="AudioStreamPlayer2D" parent="Player1Cards/Container1/Card"]
+stream = ExtResource( 3 )
+
+[node name="Container2" type="Control" parent="Player1Cards"]
+margin_top = 201.0
+margin_right = 150.0
+margin_bottom = 298.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Card" type="TextureButton" parent="Player1Cards/Container2"]
+margin_right = 148.0
+margin_bottom = 209.0
+texture_normal = SubResource( 2 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerGradient" type="TextureRect" parent="Player1Cards/Container2/Card"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyGradient" type="TextureRect" parent="Player1Cards/Container2/Card"]
+visible = false
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 6 )
+expand = true
+
+[node name="Attributes" type="GridContainer" parent="Player1Cards/Container2/Card"]
+margin_left = 12.0
+margin_top = 14.0
+margin_right = 75.0
+margin_bottom = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="Player1Cards/Container2/Card/Attributes"]
+margin_right = 18.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Top" type="TextureRect" parent="Player1Cards/Container2/Card/Attributes"]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container2" type="Container" parent="Player1Cards/Container2/Card/Attributes"]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Left" type="TextureRect" parent="Player1Cards/Container2/Card/Attributes"]
+margin_top = 20.0
+margin_right = 18.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container3" type="Container" parent="Player1Cards/Container2/Card/Attributes"]
+margin_left = 22.0
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Right" type="TextureRect" parent="Player1Cards/Container2/Card/Attributes"]
+margin_left = 44.0
+margin_top = 20.0
+margin_right = 62.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container4" type="Container" parent="Player1Cards/Container2/Card/Attributes"]
+margin_top = 40.0
+margin_right = 18.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Down" type="TextureRect" parent="Player1Cards/Container2/Card/Attributes"]
+margin_left = 22.0
+margin_top = 40.0
+margin_right = 40.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container5" type="Container" parent="Player1Cards/Container2/Card/Attributes"]
+margin_left = 44.0
+margin_top = 40.0
+margin_right = 62.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AudioCapture" type="AudioStreamPlayer2D" parent="Player1Cards/Container2/Card"]
+stream = ExtResource( 3 )
+
+[node name="Container3" type="Control" parent="Player1Cards"]
+margin_top = 302.0
+margin_right = 150.0
+margin_bottom = 399.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Card" type="TextureButton" parent="Player1Cards/Container3"]
+margin_right = 148.0
+margin_bottom = 209.0
+texture_normal = SubResource( 2 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerGradient" type="TextureRect" parent="Player1Cards/Container3/Card"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyGradient" type="TextureRect" parent="Player1Cards/Container3/Card"]
+visible = false
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 6 )
+expand = true
+
+[node name="Attributes" type="GridContainer" parent="Player1Cards/Container3/Card"]
+margin_left = 12.0
+margin_top = 14.0
+margin_right = 75.0
+margin_bottom = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="Player1Cards/Container3/Card/Attributes"]
+margin_right = 18.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Top" type="TextureRect" parent="Player1Cards/Container3/Card/Attributes"]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container2" type="Container" parent="Player1Cards/Container3/Card/Attributes"]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Left" type="TextureRect" parent="Player1Cards/Container3/Card/Attributes"]
+margin_top = 20.0
+margin_right = 18.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container3" type="Container" parent="Player1Cards/Container3/Card/Attributes"]
+margin_left = 22.0
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Right" type="TextureRect" parent="Player1Cards/Container3/Card/Attributes"]
+margin_left = 44.0
+margin_top = 20.0
+margin_right = 62.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container4" type="Container" parent="Player1Cards/Container3/Card/Attributes"]
+margin_top = 40.0
+margin_right = 18.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Down" type="TextureRect" parent="Player1Cards/Container3/Card/Attributes"]
+margin_left = 22.0
+margin_top = 40.0
+margin_right = 40.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container5" type="Container" parent="Player1Cards/Container3/Card/Attributes"]
+margin_left = 44.0
+margin_top = 40.0
+margin_right = 62.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AudioCapture" type="AudioStreamPlayer2D" parent="Player1Cards/Container3/Card"]
+stream = ExtResource( 3 )
+
+[node name="Container4" type="Control" parent="Player1Cards"]
+margin_top = 403.0
+margin_right = 150.0
+margin_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Card" type="TextureButton" parent="Player1Cards/Container4"]
+margin_right = 148.0
+margin_bottom = 209.0
+texture_normal = SubResource( 2 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerGradient" type="TextureRect" parent="Player1Cards/Container4/Card"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyGradient" type="TextureRect" parent="Player1Cards/Container4/Card"]
+visible = false
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 6 )
+expand = true
+
+[node name="Attributes" type="GridContainer" parent="Player1Cards/Container4/Card"]
+margin_left = 12.0
+margin_top = 14.0
+margin_right = 75.0
+margin_bottom = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="Player1Cards/Container4/Card/Attributes"]
+margin_right = 18.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Top" type="TextureRect" parent="Player1Cards/Container4/Card/Attributes"]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container2" type="Container" parent="Player1Cards/Container4/Card/Attributes"]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Left" type="TextureRect" parent="Player1Cards/Container4/Card/Attributes"]
+margin_top = 20.0
+margin_right = 18.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container3" type="Container" parent="Player1Cards/Container4/Card/Attributes"]
+margin_left = 22.0
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Right" type="TextureRect" parent="Player1Cards/Container4/Card/Attributes"]
+margin_left = 44.0
+margin_top = 20.0
+margin_right = 62.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container4" type="Container" parent="Player1Cards/Container4/Card/Attributes"]
+margin_top = 40.0
+margin_right = 18.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Down" type="TextureRect" parent="Player1Cards/Container4/Card/Attributes"]
+margin_left = 22.0
+margin_top = 40.0
+margin_right = 40.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container5" type="Container" parent="Player1Cards/Container4/Card/Attributes"]
+margin_left = 44.0
+margin_top = 40.0
+margin_right = 62.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AudioCapture" type="AudioStreamPlayer2D" parent="Player1Cards/Container4/Card"]
+stream = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="Player1Cards"]
+
+[node name="Player2Cards" type="VBoxContainer" parent="."]
+anchor_bottom = 1.0
+margin_left = 700.0
+margin_right = 175.0
+margin_bottom = 500.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Container0" type="Control" parent="Player2Cards"]
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Card" type="TextureButton" parent="Player2Cards/Container0"]
+margin_right = 148.0
+margin_bottom = 209.0
+texture_normal = SubResource( 2 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerGradient" type="TextureRect" parent="Player2Cards/Container0/Card"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyGradient" type="TextureRect" parent="Player2Cards/Container0/Card"]
+visible = false
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 6 )
+expand = true
+
+[node name="Attributes" type="GridContainer" parent="Player2Cards/Container0/Card"]
+margin_left = 12.0
+margin_top = 14.0
+margin_right = 75.0
+margin_bottom = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="Player2Cards/Container0/Card/Attributes"]
+margin_right = 18.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Top" type="TextureRect" parent="Player2Cards/Container0/Card/Attributes"]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container2" type="Container" parent="Player2Cards/Container0/Card/Attributes"]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Left" type="TextureRect" parent="Player2Cards/Container0/Card/Attributes"]
+margin_top = 20.0
+margin_right = 18.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container3" type="Container" parent="Player2Cards/Container0/Card/Attributes"]
+margin_left = 22.0
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Right" type="TextureRect" parent="Player2Cards/Container0/Card/Attributes"]
+margin_left = 44.0
+margin_top = 20.0
+margin_right = 62.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container4" type="Container" parent="Player2Cards/Container0/Card/Attributes"]
+margin_top = 40.0
+margin_right = 18.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Down" type="TextureRect" parent="Player2Cards/Container0/Card/Attributes"]
+margin_left = 22.0
+margin_top = 40.0
+margin_right = 40.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container5" type="Container" parent="Player2Cards/Container0/Card/Attributes"]
+margin_left = 44.0
+margin_top = 40.0
+margin_right = 62.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AudioCapture" type="AudioStreamPlayer2D" parent="Player2Cards/Container0/Card"]
+stream = ExtResource( 3 )
+
+[node name="Container1" type="Control" parent="Player2Cards"]
+margin_top = 100.0
+margin_bottom = 197.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Card" type="TextureButton" parent="Player2Cards/Container1"]
+margin_right = 148.0
+margin_bottom = 209.0
+texture_normal = SubResource( 2 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerGradient" type="TextureRect" parent="Player2Cards/Container1/Card"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyGradient" type="TextureRect" parent="Player2Cards/Container1/Card"]
+visible = false
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 6 )
+expand = true
+
+[node name="Attributes" type="GridContainer" parent="Player2Cards/Container1/Card"]
+margin_left = 12.0
+margin_top = 14.0
+margin_right = 75.0
+margin_bottom = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="Player2Cards/Container1/Card/Attributes"]
+margin_right = 18.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Top" type="TextureRect" parent="Player2Cards/Container1/Card/Attributes"]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container2" type="Container" parent="Player2Cards/Container1/Card/Attributes"]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Left" type="TextureRect" parent="Player2Cards/Container1/Card/Attributes"]
+margin_top = 20.0
+margin_right = 18.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container3" type="Container" parent="Player2Cards/Container1/Card/Attributes"]
+margin_left = 22.0
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Right" type="TextureRect" parent="Player2Cards/Container1/Card/Attributes"]
+margin_left = 44.0
+margin_top = 20.0
+margin_right = 62.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container4" type="Container" parent="Player2Cards/Container1/Card/Attributes"]
+margin_top = 40.0
+margin_right = 18.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Down" type="TextureRect" parent="Player2Cards/Container1/Card/Attributes"]
+margin_left = 22.0
+margin_top = 40.0
+margin_right = 40.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container5" type="Container" parent="Player2Cards/Container1/Card/Attributes"]
+margin_left = 44.0
+margin_top = 40.0
+margin_right = 62.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AudioCapture" type="AudioStreamPlayer2D" parent="Player2Cards/Container1/Card"]
+stream = ExtResource( 3 )
+
+[node name="Container2" type="Control" parent="Player2Cards"]
+margin_top = 201.0
+margin_bottom = 298.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Card" type="TextureButton" parent="Player2Cards/Container2"]
+margin_right = 148.0
+margin_bottom = 209.0
+texture_normal = SubResource( 2 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerGradient" type="TextureRect" parent="Player2Cards/Container2/Card"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyGradient" type="TextureRect" parent="Player2Cards/Container2/Card"]
+visible = false
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 6 )
+expand = true
+
+[node name="Attributes" type="GridContainer" parent="Player2Cards/Container2/Card"]
+margin_left = 12.0
+margin_top = 14.0
+margin_right = 75.0
+margin_bottom = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="Player2Cards/Container2/Card/Attributes"]
+margin_right = 18.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Top" type="TextureRect" parent="Player2Cards/Container2/Card/Attributes"]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container2" type="Container" parent="Player2Cards/Container2/Card/Attributes"]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Left" type="TextureRect" parent="Player2Cards/Container2/Card/Attributes"]
+margin_top = 20.0
+margin_right = 18.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container3" type="Container" parent="Player2Cards/Container2/Card/Attributes"]
+margin_left = 22.0
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Right" type="TextureRect" parent="Player2Cards/Container2/Card/Attributes"]
+margin_left = 44.0
+margin_top = 20.0
+margin_right = 62.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container4" type="Container" parent="Player2Cards/Container2/Card/Attributes"]
+margin_top = 40.0
+margin_right = 18.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Down" type="TextureRect" parent="Player2Cards/Container2/Card/Attributes"]
+margin_left = 22.0
+margin_top = 40.0
+margin_right = 40.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container5" type="Container" parent="Player2Cards/Container2/Card/Attributes"]
+margin_left = 44.0
+margin_top = 40.0
+margin_right = 62.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AudioCapture" type="AudioStreamPlayer2D" parent="Player2Cards/Container2/Card"]
+stream = ExtResource( 3 )
+
+[node name="Container3" type="Control" parent="Player2Cards"]
+margin_top = 302.0
+margin_bottom = 399.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Card" type="TextureButton" parent="Player2Cards/Container3"]
+margin_right = 148.0
+margin_bottom = 209.0
+texture_normal = SubResource( 2 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerGradient" type="TextureRect" parent="Player2Cards/Container3/Card"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyGradient" type="TextureRect" parent="Player2Cards/Container3/Card"]
+visible = false
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 6 )
+expand = true
+
+[node name="Attributes" type="GridContainer" parent="Player2Cards/Container3/Card"]
+margin_left = 12.0
+margin_top = 14.0
+margin_right = 75.0
+margin_bottom = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="Player2Cards/Container3/Card/Attributes"]
+margin_right = 18.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Top" type="TextureRect" parent="Player2Cards/Container3/Card/Attributes"]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container2" type="Container" parent="Player2Cards/Container3/Card/Attributes"]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Left" type="TextureRect" parent="Player2Cards/Container3/Card/Attributes"]
+margin_top = 20.0
+margin_right = 18.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container3" type="Container" parent="Player2Cards/Container3/Card/Attributes"]
+margin_left = 22.0
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Right" type="TextureRect" parent="Player2Cards/Container3/Card/Attributes"]
+margin_left = 44.0
+margin_top = 20.0
+margin_right = 62.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container4" type="Container" parent="Player2Cards/Container3/Card/Attributes"]
+margin_top = 40.0
+margin_right = 18.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Down" type="TextureRect" parent="Player2Cards/Container3/Card/Attributes"]
+margin_left = 22.0
+margin_top = 40.0
+margin_right = 40.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container5" type="Container" parent="Player2Cards/Container3/Card/Attributes"]
+margin_left = 44.0
+margin_top = 40.0
+margin_right = 62.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AudioCapture" type="AudioStreamPlayer2D" parent="Player2Cards/Container3/Card"]
+stream = ExtResource( 3 )
+
+[node name="Container4" type="Control" parent="Player2Cards"]
+margin_top = 403.0
+margin_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Card" type="TextureButton" parent="Player2Cards/Container4"]
+margin_right = 148.0
+margin_bottom = 209.0
+texture_normal = SubResource( 2 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerGradient" type="TextureRect" parent="Player2Cards/Container4/Card"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyGradient" type="TextureRect" parent="Player2Cards/Container4/Card"]
+visible = false
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 91.5
+margin_right = 119.0
+margin_bottom = 222.5
+rect_rotation = -90.0
+texture = SubResource( 6 )
+expand = true
+
+[node name="Attributes" type="GridContainer" parent="Player2Cards/Container4/Card"]
+margin_left = 12.0
+margin_top = 14.0
+margin_right = 75.0
+margin_bottom = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="Player2Cards/Container4/Card/Attributes"]
+margin_right = 18.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Top" type="TextureRect" parent="Player2Cards/Container4/Card/Attributes"]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container2" type="Container" parent="Player2Cards/Container4/Card/Attributes"]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Left" type="TextureRect" parent="Player2Cards/Container4/Card/Attributes"]
+margin_top = 20.0
+margin_right = 18.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container3" type="Container" parent="Player2Cards/Container4/Card/Attributes"]
+margin_left = 22.0
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Right" type="TextureRect" parent="Player2Cards/Container4/Card/Attributes"]
+margin_left = 44.0
+margin_top = 20.0
+margin_right = 62.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container4" type="Container" parent="Player2Cards/Container4/Card/Attributes"]
+margin_top = 40.0
+margin_right = 18.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Down" type="TextureRect" parent="Player2Cards/Container4/Card/Attributes"]
+margin_left = 22.0
+margin_top = 40.0
+margin_right = 40.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Container5" type="Container" parent="Player2Cards/Container4/Card/Attributes"]
+margin_left = 44.0
+margin_top = 40.0
+margin_right = 62.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AudioCapture" type="AudioStreamPlayer2D" parent="Player2Cards/Container4/Card"]
+stream = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="Player2Cards"]
+
+[node name="Scores" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1Score" type="TextureRect" parent="Scores"]
+margin_left = 40.0
+margin_top = 550.0
+margin_right = 130.0
+margin_bottom = 632.0
+texture = SubResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player2Score" type="TextureRect" parent="Scores"]
+margin_left = 720.0
+margin_top = 550.0
+margin_right = 805.0
+margin_bottom = 632.0
+texture = SubResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
