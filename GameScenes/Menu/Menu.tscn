@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://resized-MainMenu.jpeg" type="Texture" id=1]
+[ext_resource path="res://MainMenu.jpeg" type="Texture" id=1]
 [ext_resource path="res://GameScenes/Menu/Pointer.cs" type="Script" id=2]
 [ext_resource path="res://Globals/Textures/iconfl01_15.png" type="Texture" id=3]
 [ext_resource path="res://Globals/Audio/cursor_move.ogg" type="AudioStream" id=4]

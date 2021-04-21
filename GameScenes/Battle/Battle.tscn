@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://resized-TripleTriadBG.jpeg" type="Texture" id=1]
+[ext_resource path="res://TripleTriadBG.jpeg" type="Texture" id=1]
 [ext_resource path="res://Globals/Textures/cardstext_13-edit.png" type="Texture" id=2]
 [ext_resource path="res://GameScenes/Battle/Audio/sound-capture.ogg" type="AudioStream" id=3]
 [ext_resource path="res://GameObjects/Card/Textures/cards_0.png" type="Texture" id=4]
