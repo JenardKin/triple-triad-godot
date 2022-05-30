@@ -4,7 +4,7 @@ using System;
 namespace MenuEntries
 {
 	public interface MenuButtons{ void Callback(); }
-	
+
 	public class MenuEntries : VBoxContainer
 	{
 		// Declare member variables here. Examples:
